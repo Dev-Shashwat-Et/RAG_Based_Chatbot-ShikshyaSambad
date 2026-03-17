@@ -1,0 +1,181 @@
+/* 1. Global Page Reset */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7f6;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1000px; /* Slightly wider for better table display */
+  margin: 0 auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 2. Header & Branding */
+h1 {
+  color: #003366;
+  text-align: center;
+  border-bottom: 2px solid #003366;
+  padding-bottom: 15px;
+  margin-top: 0;
+}
+
+/* 3. Search Bar / Form Area */
+.search-area {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 14px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+  border-color: #003366;
+}
+
+button {
+  padding: 12px 28px;
+  background-color: #003366;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background 0.3s, transform 0.1s;
+}
+
+button:hover {
+  background-color: #00509e;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* 4. AI Response Container */
+.response-box {
+  border-top: 1px solid #eee;
+  padding-top: 25px;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.user-query {
+  background: #e9f5ff;
+  padding: 12px 18px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  border-left: 4px solid #003366;
+  font-style: italic;
+  color: #444;
+}
+
+/* 5. MARKDOWN SPECIFIC STYLING (The "Fix") */
+.ai-answer {
+  font-size: 16px;
+}
+
+/* Headers inside AI Response */
+.ai-answer h2,
+.ai-answer h3 {
+  color: #003366;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+/* Table Styling - Optimized for Data Comparison */
+.ai-answer table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 15px;
+  overflow-x: auto;
+  display: block; /* Allows horizontal scroll on mobile */
+}
+
+.ai-answer th {
+  background-color: #003366;
+  color: white;
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.ai-answer td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  vertical-align: top;
+}
+
+.ai-answer tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.ai-answer tr:hover {
+  background-color: #f1f4f8;
+}
+
+/* Forces bullet points to show up for lists */
+.ai-answer ul {
+  list-style-type: disc !important; /* Forces the dot to show */
+  padding-left: 25px !important;
+  margin-bottom: 15px;
+}
+
+.ai-answer li {
+  display: list-item !important; /* Forces it to behave like a list */
+}
+
+/* Fixes the table pipes from your screenshot */
+.ai-answer table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.ai-answer th,
+.ai-answer td {
+  border: 1px solid #ddd;
+  padding: 12px;
+}
+
+/* Paragraph spacing */
+.ai-answer p {
+  margin-bottom: 18px;
+}
+
+/* 6. Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 7. Mobile Adjustments */
+@media (max-width: 600px) {
+  .search-area {
+    flex-direction: column;
+  }
+  .container {
+    padding: 15px;
+  }
+}

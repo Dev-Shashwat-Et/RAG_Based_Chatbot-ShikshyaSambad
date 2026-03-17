@@ -1,0 +1,34 @@
+Q. Why we use OS on some program but not on other programs?
+──────────────────────────────────────────────────────────────────
+
+OS is everywhere in data manipulation. For small computations in RAM, 
+Python automatically handles it. But to access persistent storage 
+(SSD/Hard Disk) we need to use OS functions explicitly.
+
+Key Points:
+- OS is always involved (even when you don't see it)
+- Python automates RAM access for simple variables/algorithms  
+- Disk access requires explicit OS calls (via `os` module)
+- It's SSD/Hard Disk, not ROM
+
+Visual Representation:
+────────────────────
+PYTHON PROGRAM:
+┌─────────────────────────────────┐
+│  Level 1: Automatic (RAM only)  │
+│  - Variables: x = 10            │
+│  - Lists: data = [1,2,3]        │
+│  - Algorithms: sum()            │
+│                                  │
+│  Python → Auto RAM requests → OS│
+└─────────────────────────────────┘
+
+┌─────────────────────────────────┐
+│  Level 2: Manual (Disk access)  │
+│  - Files: open("data.txt")      │
+│  - Directories: os.listdir()    │
+│  - Paths: os.path.join()        │
+│                                  │
+│  You → Explicit os.xxx() → OS   │
+│         → SSD/Hard Disk access  │
+└─────────────────────────────────┘

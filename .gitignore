@@ -206,3 +206,8 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 .env
+
+# Data directories
+data/
+research/chroma_db_e5
+shikshyaSambad/research/chroma_db_e5

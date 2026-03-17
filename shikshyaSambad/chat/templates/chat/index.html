@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UK ShikshyaSambad</title>
+    <link rel="stylesheet" href="{% static 'chat/style.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>ShikshyaSambad Education Consultant</h1>
+      <p style="text-align: center; color: #666">
+        Ask about fees, entry requirements, or university comparisons for 2026.
+      </p>
+
+      <form method="POST" class="search-area" action=".">
+        {% csrf_token %}
+        <input
+          type="text"
+          name="user_query"
+          placeholder="e.g. Compare MBA fees for Greenwich and Oxford..."
+          value="{{ query }}"
+          required
+        />
+        <button type="submit">Ask Bot</button>
+      </form>
+
+      {% if response %}
+      <div class="response-box">
+        <div class="user-query"><strong>You asked:</strong> {{ query }}</div>
+        <div class="ai-answer">{{ response|safe }}</div>
+      </div>
+      {% endif %}
+    </div>
+  </body>
+</html>
