@@ -12,10 +12,12 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 import os
 from pathlib import Path
 from dotenv import load_dotenv  # Make sure this is imported
+from decouple import config
+
+SECRET_KEY = config('SECRET_KEY')
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-
 
 # 1. First define this
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,7 +30,7 @@ load_dotenv(os.path.join(BASE_DIR, '.env'))
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-*!t(9%qyz#a4dd19&xn8g_)d+y$5caq*0nt_y&!_3=yg#@smli"
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
